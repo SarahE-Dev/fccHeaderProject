@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 
 app.get('/api/whoami', (req, res)=>{
     try {
-        res.json({ipaddress: req.ip, language: req.acceptsLanguages()[0], software: req.headers['user-agent']})
+        res.json({"ipaddress": req.ip, "language": req.acceptsLanguages()[0], "software": req.headers['user-agent']})
        
     } catch (error) {
         res.status(500).json({message: 'error', error: error})
